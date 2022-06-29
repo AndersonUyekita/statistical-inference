@@ -1,0 +1,46 @@
+---
+title: '`Week 4` Statistical Inference'
+author: '`r if(knitr::is_html_output()) {"&#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Anderson H Uyekita"} else {NULL}`'
+output:
+  github_document: default
+params:
+  author: 'Anderson H Uyekita'
+  course: 'Statistical Inference'
+  course_url: 'https://www.coursera.org/learn/statistical-inference'
+  specialization: 'Data Science: Statistics and Machine Learning Specialization'
+  specialization_url: 'https://www.coursera.org/learn/statistical-inference'
+  instructor: 'Brian Caffo'
+  course_start: !r lubridate::ymd('2022/06/29')
+  course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
+  week: ' Week 4'
+  certificate_url: './'
+---
+
+```{r setup,include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE, message = FALSE, warning = FALSE)
+library(rmarkdown)
+library(lubridate)
+```
+
+`r if(!knitr::is_html_output()) {sprintf(fmt = "* &#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Author: %s", params$author)}`
+`r sprintf(fmt = "* &#x1f4da; Specialization: [%s](%s){target='_blank' rel='noopener'}", params$specialization, params$specialization_url)`
+`r sprintf(fmt = "* &#x1f4d6; Course: [%s](%s){target='_blank' rel='noopener'}", params$course, params$course_url)`
+    `r sprintf(fmt = "* &#x1F9D1;&#x200d;&#x1F3EB; Instructor: %s", params$instructor)`
+`r sprintf(fmt = "* &#x1F4C6; %s", params$week)`
+    `r sprintf(fmt = "* &#x1F6A6; Start: %s", format(params$course_start, "%A, %d %B %Y"))`
+    `r sprintf(fmt = "* &#x1F3C1; Finish: %s", format(params$course_finish, "%A, %d %B %Y"))`
+`r if(params$certificate_url != "./") {sprintf(fmt = "* &#x1F393; [Certificate](%s)", params$certificate_url)}`
+
+--------------------------------------------------------------------------------
+
+#### Assignments & Deliverables
+
+#### Slides
+
+#### Description
+
+We will begin looking into power, bootstrapping, and permutation tests.
+
+
+## Class Notes
+
