@@ -20,8 +20,7 @@
 
 -   [🚀 Course Project 3
     Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-3)
--   [📝 Quiz
-    https://github.com/AndersonUyekita](3/Week%203/quiz-3_statistical-inference.md)
+-   [📝 Quiz 3](./quiz-3_statistical-inference.md)
 
 #### Slides
 

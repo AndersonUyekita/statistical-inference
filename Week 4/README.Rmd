@@ -34,7 +34,7 @@ library(lubridate)
 #### Assignments & Deliverables
 
 * [&#x1F680; Course Project 4 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-4)
-* [&#x1F4DD; Quiz https://github.com/AndersonUyekita](4/Week 4/quiz-4_statistical-inference.md)
+* [&#x1F4DD; Quiz 4](./quiz-4_statistical-inference.md)
 
 #### Slides
 
