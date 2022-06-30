@@ -13,7 +13,6 @@ params:
   course_start: !r lubridate::ymd('2022/06/29')
   course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
   week: ' Week 1'
-  certificate_url: './'
 ---
 
 ```{r setup,include=FALSE}
@@ -29,18 +28,24 @@ library(lubridate)
 `r sprintf(fmt = "* &#x1F4C6; %s", params$week)`
     `r sprintf(fmt = "* &#x1F6A6; Start: %s", format(params$course_start, "%A, %d %B %Y"))`
     `r sprintf(fmt = "* &#x1F3C1; Finish: %s", format(params$course_finish, "%A, %d %B %Y"))`
-`r if(params$certificate_url != "./") {sprintf(fmt = "* &#x1F393; [Certificate](%s)", params$certificate_url)}`
 
 --------------------------------------------------------------------------------
 
 #### Assignments & Deliverables
 
+* [&#x1F680; Course Project 1 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-1)
+* [&#x1F4DD; Quiz 1](./Week 1/quiz-1_statistical-inference.md)
+
 #### Slides
+
+* Module 1 -- Introductory video
+* Module 2 -- Probability
+* Module 3 -- Conditional probability
+* Module 4 -- Expected values
 
 #### Description
 
 This week, we'll focus on the fundamentals including probability, random variables, expectations and more.
-
 
 ## Class Notes
 

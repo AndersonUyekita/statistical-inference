@@ -41,6 +41,12 @@ library(lubridate)
 
 #### Class Notes
 
+* [&#x1F4C6; Week 1](./Week 1)
+* [&#x1F4C6; Week 2](./Week 2)
+* [&#x1F4C6; Week 3](./Week 3)
+* [&#x1F4C6; Week 4](./Week 4)
+* [&#x1F4D1; Course Textbook Notes](./book)
+
 #### Course Description
 
 In this class students will learn the fundamentals of statistical inference. Students will receive a broad overview of the goals, assumptions and modes of performing statistical inference. Students will be able to perform inferential tasks in highly targeted settings and will be able to use the skills developed as a roadmap for more complex inferential challenges.
@@ -63,6 +69,8 @@ In this class students will learn the fundamentals of statistical inference. Stu
 * Resampling
 
 #### Course Textbook
+
+The book [&#x1F4D4; Statistical inference for data science](./book/statistical-inference-for-data-science.pdf) covers the lecture material in this course.
 
 #### Course Projects
 

@@ -1,8 +1,15 @@
 ---
-title: '`Week 3` Statistical Inference'
+title: '`Quiz 4` Statistical Inference'
 author: '`r if(knitr::is_html_output()) {"&#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Anderson H Uyekita"} else {NULL}`'
 output:
   github_document: default
+  html_document:
+    self_contained: yes
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
 params:
   author: 'Anderson H Uyekita'
   course: 'Statistical Inference'
@@ -12,7 +19,8 @@ params:
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/06/29')
   course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
-  week: ' Week 3'
+  week: ' Week 4'
+always_allow_html: true
 ---
 
 ```{r setup,include=FALSE}
@@ -31,20 +39,18 @@ library(lubridate)
 
 --------------------------------------------------------------------------------
 
-#### Assignments & Deliverables
+## Question 1
 
-* [&#x1F680; Course Project 3 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-3)
-* [&#x1F4DD; Quiz 3](./Week 3/quiz-3_statistical-inference.md)
 
-#### Slides
+## Question 2
 
-* Module 8 -- Confidence intervals
-* Module 9 -- Hypothesis testing
-* Module 10 -- P-values
 
-#### Description
+## Question 3
 
-We will be taking a look at intervals, testing, and pvalues in this lesson.
 
-## Class Notes
+## Question 4
+
+
+## Question 5
+
 

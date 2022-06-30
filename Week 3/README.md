@@ -12,13 +12,21 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 3
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Wednesday, 29 June 2022
+    -   🏁 Finish: Thursday, 30 June 2022
 
 ------------------------------------------------------------------------
 
 #### Assignments & Deliverables
 
+-   [🚀 Course Project 3
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-3)
+-   [📝 Quiz 3](./Week%203/quiz-3_statistical-inference.md)
+
 #### Slides
+
+-   Module 8 – Confidence intervals
+-   Module 9 – Hypothesis testing
+-   Module 10 – P-values
 
 #### Description
 

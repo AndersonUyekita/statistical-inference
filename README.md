@@ -11,7 +11,7 @@ Statistical Inference
     target="_blank" rel="noopener">Statistical Inference</a>
     -   🧑‍🏫 Instructor: Brian Caffo
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Wednesday, 29 June 2022
+    -   🏁 Finish: Thursday, 30 June 2022
 
 ------------------------------------------------------------------------
 
@@ -25,6 +25,12 @@ Statistical Inference
 -   [📝 Quiz 4](./Week%204/quiz-4_statistical-inference.md)
 
 #### Class Notes
+
+-   [📆 Week 1](./Week%201)
+-   [📆 Week 2](./Week%202)
+-   [📆 Week 3](./Week%203)
+-   [📆 Week 4](./Week%204)
+-   [📑 Course Textbook Notes](./book)
 
 #### Course Description
 
@@ -52,6 +58,10 @@ inferential challenges.
 -   Resampling
 
 #### Course Textbook
+
+The book [📔 Statistical inference for data
+science](./book/statistical-inference-for-data-science.pdf) covers the
+lecture material in this course.
 
 #### Course Projects
 

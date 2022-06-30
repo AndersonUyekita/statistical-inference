@@ -1,4 +1,4 @@
-`Week 4` Statistical Inference
+`Book` Statistical Inference
 ================
 
 -   👨🏻‍💻 Author: Anderson H Uyekita
@@ -10,26 +10,13 @@
     <a href="https://www.coursera.org/learn/statistical-inference"
     target="_blank" rel="noopener">Statistical Inference</a>
     -   🧑‍🏫 Instructor: Brian Caffo
--   📆 Week 4
+-   📆 Reading
     -   🚦 Start: Wednesday, 29 June 2022
     -   🏁 Finish: Thursday, 30 June 2022
+-   📔 Book:
+    <a href="https://leanpub.com/LittleInferenceBook" target="_blank"
+    rel="noopener">Statistical inference for data science</a>
 
 ------------------------------------------------------------------------
 
-#### Assignments & Deliverables
-
--   [🚀 Course Project 4
-    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-4)
--   [📝 Quiz 4](./Week%204/quiz-4_statistical-inference.md)
-
-#### Slides
-
--   Module 11 – Power
--   Module 12 – Multiple Comparisons
--   Module 13 – Resampling
-
-#### Description
-
-We will begin looking into power, bootstrapping, and permutation tests.
-
-## Class Notes
+## Notes

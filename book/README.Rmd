@@ -1,5 +1,5 @@
 ---
-title: '`Week 3` Statistical Inference'
+title: '`Book` Statistical Inference'
 author: '`r if(knitr::is_html_output()) {"&#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Anderson H Uyekita"} else {NULL}`'
 output:
   github_document: default
@@ -12,7 +12,9 @@ params:
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/06/29')
   course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
-  week: ' Week 3'
+  week: 'Reading'
+  course_book: 'Statistical inference for data science'
+  course_book_url: 'https://leanpub.com/LittleInferenceBook'
 ---
 
 ```{r setup,include=FALSE}
@@ -28,23 +30,10 @@ library(lubridate)
 `r sprintf(fmt = "* &#x1F4C6; %s", params$week)`
     `r sprintf(fmt = "* &#x1F6A6; Start: %s", format(params$course_start, "%A, %d %B %Y"))`
     `r sprintf(fmt = "* &#x1F3C1; Finish: %s", format(params$course_finish, "%A, %d %B %Y"))`
+`r sprintf(fmt = "* &#x1F4D4; Book: [%s](%s){target='_blank' rel='noopener'}", params$course_book, params$course_book_url)`
 
 --------------------------------------------------------------------------------
 
-#### Assignments & Deliverables
+## Notes
 
-* [&#x1F680; Course Project 3 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-3)
-* [&#x1F4DD; Quiz 3](./Week 3/quiz-3_statistical-inference.md)
-
-#### Slides
-
-* Module 8 -- Confidence intervals
-* Module 9 -- Hypothesis testing
-* Module 10 -- P-values
-
-#### Description
-
-We will be taking a look at intervals, testing, and pvalues in this lesson.
-
-## Class Notes
 

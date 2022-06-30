@@ -12,13 +12,22 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 1
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Wednesday, 29 June 2022
+    -   🏁 Finish: Thursday, 30 June 2022
 
 ------------------------------------------------------------------------
 
 #### Assignments & Deliverables
 
+-   [🚀 Course Project 1
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-1)
+-   [📝 Quiz 1](./Week%201/quiz-1_statistical-inference.md)
+
 #### Slides
+
+-   Module 1 – Introductory video
+-   Module 2 – Probability
+-   Module 3 – Conditional probability
+-   Module 4 – Expected values
 
 #### Description
 

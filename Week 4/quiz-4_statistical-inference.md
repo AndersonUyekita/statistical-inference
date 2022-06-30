@@ -1,4 +1,4 @@
-`Week 4` Statistical Inference
+`Quiz 4` Statistical Inference
 ================
 
 -   👨🏻‍💻 Author: Anderson H Uyekita
@@ -16,20 +16,12 @@
 
 ------------------------------------------------------------------------
 
-#### Assignments & Deliverables
+## Question 1
 
--   [🚀 Course Project 4
-    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-4)
--   [📝 Quiz 4](./Week%204/quiz-4_statistical-inference.md)
+## Question 2
 
-#### Slides
+## Question 3
 
--   Module 11 – Power
--   Module 12 – Multiple Comparisons
--   Module 13 – Resampling
+## Question 4
 
-#### Description
-
-We will begin looking into power, bootstrapping, and permutation tests.
-
-## Class Notes
+## Question 5
