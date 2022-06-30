@@ -2,8 +2,8 @@
 ================
 
 -   👨🏻‍💻 Author: Anderson H Uyekita
--   📚 Specialization:
-    <a href="https://www.coursera.org/learn/statistical-inference"
+-   📚 Specialization: <a
+    href="https://www.coursera.org/specializations/data-science-statistics-machine-learning"
     target="_blank" rel="noopener">Data Science: Statistics and Machine
     Learning Specialization</a>
 -   📖 Course:

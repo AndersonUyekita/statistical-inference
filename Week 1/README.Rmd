@@ -8,7 +8,7 @@ params:
   course: 'Statistical Inference'
   course_url: 'https://www.coursera.org/learn/statistical-inference'
   specialization: 'Data Science: Statistics and Machine Learning Specialization'
-  specialization_url: 'https://www.coursera.org/learn/statistical-inference'
+  specialization_url: 'https://www.coursera.org/specializations/data-science-statistics-machine-learning'
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/06/29')
   course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
@@ -34,7 +34,7 @@ library(lubridate)
 #### Assignments & Deliverables
 
 * [&#x1F680; Course Project 1 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-1)
-* [&#x1F4DD; Quiz 1](./Week 1/quiz-1_statistical-inference.md)
+* [&#x1F4DD; Quiz https://github.com/AndersonUyekita](1/Week 1/quiz-1_statistical-inference.md)
 
 #### Slides
 

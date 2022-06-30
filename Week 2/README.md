@@ -2,8 +2,8 @@
 ================
 
 -   👨🏻‍💻 Author: Anderson H Uyekita
--   📚 Specialization:
-    <a href="https://www.coursera.org/learn/statistical-inference"
+-   📚 Specialization: <a
+    href="https://www.coursera.org/specializations/data-science-statistics-machine-learning"
     target="_blank" rel="noopener">Data Science: Statistics and Machine
     Learning Specialization</a>
 -   📖 Course:
@@ -20,7 +20,8 @@
 
 -   [🚀 Course Project 2
     Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-2)
--   [📝 Quiz 2](./Week%202/quiz-2_statistical-inference.md)
+-   [📝 Quiz
+    https://github.com/AndersonUyekita](2/Week%202/quiz-2_statistical-inference.md)
 
 #### Slides
 
