@@ -13,6 +13,8 @@
 -   📆 Week 1
     -   🚦 Start: Wednesday, 29 June 2022
     -   🏁 Finish: Thursday, 30 June 2022
+-   🌎 Rpubs: [Interactive
+    Document](https://rpubs.com/AndersonUyekita/quiz-1_statistical-inference)
 
 ------------------------------------------------------------------------
 

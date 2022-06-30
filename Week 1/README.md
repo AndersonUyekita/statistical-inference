@@ -34,4 +34,6 @@
 This week, we’ll focus on the fundamentals including probability, random
 variables, expectations and more.
 
+------------------------------------------------------------------------
+
 ## Class Notes

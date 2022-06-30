@@ -32,4 +32,6 @@
 
 We will begin looking into power, bootstrapping, and permutation tests.
 
+------------------------------------------------------------------------
+
 ## Class Notes
