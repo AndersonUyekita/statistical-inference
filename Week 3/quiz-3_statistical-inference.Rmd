@@ -4,7 +4,7 @@ author: '`r if(knitr::is_html_output()) {"&#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; An
 output:
   github_document: default
   html_document:
-    self_contained: yes
+    self_contained: true
     toc: true
     toc_depth: 4
     toc_float:
@@ -17,8 +17,8 @@ params:
   specialization: 'Data Science: Statistics and Machine Learning Specialization'
   specialization_url: 'https://www.coursera.org/specializations/data-science-statistics-machine-learning'
   instructor: 'Brian Caffo'
-  course_start: !r lubridate::ymd('2022/06/29')
-  course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
+  course_start: !r lubridate::ymd('2022/07/01', tz = "America/Sao_Paulo")
+  course_finish: !r lubridate::ymd('2022/07/01', tz = "America/Sao_Paulo")
   week: ' Week 3'
 always_allow_html: true
 ---
@@ -27,6 +27,7 @@ always_allow_html: true
 knitr::opts_chunk$set(echo = TRUE, cache = TRUE, message = FALSE, warning = FALSE)
 library(rmarkdown)
 library(lubridate)
+library(ggplot2)
 ```
 
 `r if(!knitr::is_html_output()) {sprintf(fmt = "* &#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Author: %s", params$author)}`
@@ -40,18 +41,199 @@ library(lubridate)
 
 --------------------------------------------------------------------------------
 
-## Question 1
+## Question  1
 
+In a population of interest, a sample of 9 men yielded a sample average brain volume of 1,100cc and a standard deviation of 30cc. What is a 95% Student's T confidence interval for the mean brain volume in this new population?
 
-## Question 2
+- [ ] [1092, 1108]
+- [ ] [1080, 1120]
+- [ ] [1031, 1169]
+- [x] [1077,1123]
 
+**Answer**
 
-## Question 3
+A simple application of "Gosset’s t distribution".
 
+$$CI = \bar {brain} \pm t_{n-1} \cdot \frac{S}{\sqrt{n}} = 1100 \pm t_{n-1} \cdot \frac{30}{\sqrt{9}}$$
+The $t_{n-1}$ will be calculated based on $\alpha$ equal to 5%.
 
-## Question 4
+$$t_{(n-1,1-\frac{\alpha}{2})} \implies t_{(8,0.975)}$$
+Calculating the "t-value":
 
+```{r}
+qt(p = 1 - 0.05/2, df = 9 - 1)
+```
+$$CI = 1100 \pm 2.306004 \cdot \frac{30}{\sqrt{9}} = [1077,1123]$$
 
-## Question 5
+```{r}
+# Calculating the bottom bound.
+b1 <- 1100 - qt(p = 1 - 0.05/2, df = 9 - 1) * 30 / sqrt(9)
 
+# Calculating the upper bound.
+b2 <- 1100 + qt(p = 1 - 0.05/2, df = 9 - 1) * 30 / sqrt(9)
 
+# Printing the boundaries
+c(b1, b2)
+```
+
+## Question  2
+
+A diet pill is given to 9 subjects over six weeks. The average difference in weight (follow up - baseline) is -2 pounds. What would the standard deviation of the difference in weight have to be for the upper endpoint of the 95% T confidence interval to touch 0?
+
+- [x] 2.60
+- [ ] 1.50
+- [ ] 2.10
+- [ ] 0.30
+
+**Answer**
+
+According to the [Statistical inference for data science][book_url] book, on page 76, this question is similar to the "Gosset’s sleep data".
+
+The sample is small, so it is mandatory to use t-student.
+
+$$Boundaries = mn \pm 1 \cdot t_{(n-1, 1-\frac{\alpha}{2})} \cdot \frac{s}{\sqrt{n}} $$
+
+$$t_{(n-1,1-\frac{\alpha}{2})} \implies t_{(8,0.975)}$$
+Thus:
+
+```{r}
+# Calculating the t_8,0.975
+qt(p = 0.975, df = 9 - 1)
+```
+
+According to the question statement, the upper endpoint is **zero**.
+
+$$0 = -2 + \underbrace{t_{(8,0.975)}}_{2.306004} \cdot \frac{S}{\sqrt{9}} $$
+
+```{r}
+# Calculating the S
+2 * sqrt(9) / qt(p = 0.975, df = 9 - 1)
+```
+
+## Question  3
+
+In an effort to improve running performance, 5 runners were either given a protein supplement or placebo. Then, after a suitable washout period, they were given the opposite treatment. Their mile times were recorded under both the treatment and placebo, yielding 10 measurements with 2 per subject. The researchers intend to use a T test and interval to investigate the treatment. Should they use a paired or independent group T test and interval?
+
+- [x] A paired interval
+- [ ] It's necessary to use both
+- [ ] You could use either
+- [ ] Independent groups, since all subjects were seen under both systems
+
+**Answer**
+
+Following the example "Example of the t interval, Gosset’s sleep data", on page 76, it is a paired interval.
+
+## Question  4
+
+In a study of emergency room waiting times, investigators consider a new and the standard triage systems. To test the systems, administrators selected 20 nights and randomly assigned the new triage system to be used on 10 nights and the standard system on the remaining 10 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 3 hours with a variance of 0.60 while the average MWT for the old system was 5 hours with a variance of 0.68. Consider the 95% confidence interval estimate for the differences of the mean MWT associated with the new system. Assume a constant variance. What is the interval? Subtract in this order (New System - Old System). 
+
+- [ ] [-2,70, -1.29]
+- [ ] [1.29, 2.70]
+- [x] [-2.75, -1.25]
+- [ ] [1.25, 2.75]
+
+**Answer**
+
+According to the [Statistical inference for data science][book_url] book, on page 79, this question is similar to the explanation about "Confidence Interval".
+
+$$\mu_{new} - \mu_{old} = \bar m_{new} - \bar m_{old} \pm t_{(nx + ny-2,1-\frac{\alpha}{2})} \cdot S_{p} \cdot (\frac{1}{nx} + \frac{1}{ny})^{1/2}$$
+$$\mu_{new} - \mu_{old} = 3 - 5 \pm 2.100922 \cdot S_{p} \cdot 0.4472136$$
+
+$$\mu_{new} - \mu_{old} = 3 - 5 \pm 2.100922 \cdot 0.6412488 \cdot 0.4472136$$
+
+$$CI = \mu_{new} - \mu_{old} = [-2.751649,-1.248351]$$
+
+```{r}
+# NEW -> y
+my = 3
+vy = 0.60
+ny <- 10
+
+# OLD -> x
+mx = 5
+vx = 0.68
+nx <- 10
+
+a <- qt(p = 0.975, df = ny + nx - 2)
+
+b <- sqrt(1/nx + 1/ny)
+
+c <- sqrt(((nx - 1)*vy + (ny - 1)*vx)/(nx + ny - 2))
+
+my - mx + a*b*c
+my - mx - a*b*c
+
+```
+
+## Question  5
+
+Suppose that you create a 95% T confidence interval. You then create a 90% interval using the same data. What can be said about the 90% interval with respect to the 95% interval?
+
+- [ ] The interval will be the same width, but shifted.
+- [ ] It is impossible to tell.
+- [x] The interval will be narrower.
+- [ ] The interval will be wider
+
+## Question  6
+
+To further test the hospital triage system, administrators selected 200 nights and randomly assigned a new triage system to be used on 100 nights and a standard system on the remaining 100 nights. They calculated the nightly median waiting time (MWT) to see a physician. The average MWT for the new system was 4 hours with a standard deviation of 0.5 hours while the average MWT for the old system was 6 hours with a standard deviation of 2 hours. Consider the hypothesis of a decrease in the mean MWT associated with the new treatment. 
+
+What does the 95% independent group confidence interval with unequal variances suggest vis a vis this hypothesis? (Because there's so many observations per group, just use the Z quantile instead of the T.) 
+
+- [x] When subtracting (old - new) the interval is entirely above zero. The new system appears to be effective.
+- ~~[ ] When subtracting (old - new) the interval contains 0. The new system appears to be effective.~~
+- ~~[ ] When subtracting (old - new) the interval is entirely above zero. The new system does not appear to be effective.~~
+- ~~[ ] When subtracting (old - new) the interval contains 0. There is not evidence suggesting that the new system is effective.~~
+
+**Answer**
+
+> Because there's so many observations per group, just use the Z quantile instead of the T.
+
+```{r}
+# NEW
+sd_new <- 0.5
+var_new <- sd_new^2
+n_new <- 100
+
+# OLD
+sd_old <- 2
+var_old <- sd_old^2
+n_old <- 100
+
+# Calculating the boundaries.
+6 - 4 - qnorm(0.975) * sqrt(var_new/n_new + var_old/n_old)
+6 - 4 + qnorm(0.975) * sqrt(var_new/n_new + var_old/n_old)
+```
+
+The entire CI is above zero, which indicates the new standard works.
+
+## Question  7
+
+Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a placebo. Subjects’ body mass indices (BMIs) were measured at a baseline and again after having received the treatment or placebo for four weeks. The average difference from follow-up to the baseline (followup - baseline) was −3 kg/m2 for the treated group and 1 kg/m2 for the placebo group. The corresponding standard deviations of the differences was 1.5 kg/m2 for the treatment group and 1.8 kg/m2 for the placebo group. Does the change in BMI over the four week period appear to differ between the treated and placebo groups?  Assuming normality of the underlying data and a common population variance, calculate the relevant *90%* t confidence interval. Subtract in the order of (Treated - Placebo) with the smaller (more negative) number first.
+
+- [ ] [-5.531, -2.469]
+- [ ] [2.469, 5.531]
+- [x] [-5.364, -2.636]
+- [ ] [2.636, 5.364]
+
+**Answer**
+
+Following the page 79 (Confidence interval).
+
+```{r}
+# treat - placebo
+sd_p <- 1.8
+var_p <- sd_p*sd_p
+
+sd_t <- 1.5
+var_t <- sd_t*sd_t
+
+s_p <- sqrt(((9 - 1)*var_p + (9 - 1)*var_t)/(9 + 9 - 2))
+
+-3 - 1 + qt(p = 0.95, df = 9 + 9 - 2) * s_p * (1/9 + 1/9)^0.5
+
+-3 - 1 - qt(p = 0.95, df = 9 + 9 - 2) * s_p * (1/9 + 1/9)^0.5
+
+```
+
+[book_url]: https://github.com/AndersonUyekita/statistical-inference/blob/main/book/statistical-inference-for-data-dcience.pdf
