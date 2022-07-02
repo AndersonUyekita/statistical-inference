@@ -11,8 +11,8 @@
     target="_blank" rel="noopener">Statistical Inference</a>
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 4
-    -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Thursday, 30 June 2022
+    -   🚦 Start: Friday, 01 July 2022
+    -   🏁 Finish: Friday, 01 July 2022
 -   🌎 Rpubs: [Interactive
     Document](https://rpubs.com/AndersonUyekita/quiz-4_statistical-inference)
 

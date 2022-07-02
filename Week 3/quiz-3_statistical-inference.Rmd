@@ -2,7 +2,6 @@
 title: '`Quiz 3` Statistical Inference'
 author: '`r if(knitr::is_html_output()) {"&#x1f468;&#x1F3FB;&#x200d;&#x1f4bb; Anderson H Uyekita"} else {NULL}`'
 output:
-  github_document: default
   html_document:
     self_contained: true
     toc: true
@@ -10,6 +9,7 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: true
+  github_document: default
 params:
   author: 'Anderson H Uyekita'
   course: 'Statistical Inference'

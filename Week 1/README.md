@@ -37,3 +37,23 @@ variables, expectations and more.
 ------------------------------------------------------------------------
 
 ## Class Notes
+
+### Module 1 – Introductory video
+
+Statistical Inference Definitions:
+
+> -   The process of generating conclusions about a population from a
+>     noisy sample.
+> -   Statistical inference is the process of drawing formal conclusions
+>     from data.
+
+### Module 2 – Probability
+
+> In this module we discuss probability, the foundation of statistical
+> analysis. Probability assigns a number between 0 and 1 to events to
+> give a sense of the “chance” of the event. Probability has become our
+> default model for apparently random phenomena. Our eventual goal is to
+> use probability models, our formal mechanism for connecting our data
+> to a population. However, before we get to probability models, we need
+> to understand the basics of probability calculus. The next few
+> lectures cover these basics.

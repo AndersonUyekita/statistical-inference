@@ -12,7 +12,7 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 2
     -   🚦 Start: Thursday, 30 June 2022
-    -   🏁 Finish: Thursday, 30 June 2022
+    -   🏁 Finish: Friday, 01 July 2022
 -   🌎 Rpubs: [Interactive
     Document](https://rpubs.com/AndersonUyekita/quiz-2_statistical-inference)
 

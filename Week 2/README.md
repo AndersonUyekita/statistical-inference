@@ -12,7 +12,7 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 2
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Thursday, 30 June 2022
+    -   🏁 Finish: Friday, 01 July 2022
 
 ------------------------------------------------------------------------
 
