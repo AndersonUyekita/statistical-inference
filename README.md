@@ -11,14 +11,16 @@ Statistical Inference
     target="_blank" rel="noopener">Statistical Inference</a>
     -   🧑‍🏫 Instructor: Brian Caffo
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Thursday, 30 June 2022
+    -   🏁 Finish: Tuesday, 05 July 2022
 
 ------------------------------------------------------------------------
 
 #### Assignments & Deliverables
 
--   [🚀 Course Project 1
-    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-1)
+-   [🚀 Course Project – Part 1
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%201)
+-   [🚀 Course Project – Part 2
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%202)
 -   [📝 Quiz 1](./Week%201/quiz-1_statistical-inference.md)
 -   [📝 Quiz 2](./Week%202/quiz-2_statistical-inference.md)
 -   [📝 Quiz 3](./Week%203/quiz-3_statistical-inference.md)
