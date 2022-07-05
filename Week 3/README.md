@@ -32,5 +32,3 @@ We will be taking a look at intervals, testing, and pvalues in this
 lesson.
 
 ------------------------------------------------------------------------
-
-## Class Notes

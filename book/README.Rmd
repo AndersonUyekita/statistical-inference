@@ -10,8 +10,8 @@ params:
   specialization: 'Data Science: Statistics and Machine Learning Specialization'
   specialization_url: 'https://www.coursera.org/specializations/data-science-statistics-machine-learning'
   instructor: 'Brian Caffo'
-  course_start: !r lubridate::ymd('2022/06/29')
-  course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
+  course_start: !r lubridate::ymd('2022/06/29', tz = "America/Sao_Paulo")
+  course_finish: !r lubridate::ymd('2022/07/05', tz = "America/Sao_Paulo")
   week: 'Reading'
   course_book: 'Statistical inference for data science'
   course_book_url: 'https://leanpub.com/LittleInferenceBook'
@@ -33,7 +33,3 @@ library(lubridate)
 `r sprintf(fmt = "* &#x1F4D4; Book: [%s](%s){target='_blank' rel='noopener'}", params$course_book, params$course_book_url)`
 
 --------------------------------------------------------------------------------
-
-## Notes
-
-

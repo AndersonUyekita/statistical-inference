@@ -12,11 +12,9 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Reading
     -   🚦 Start: Wednesday, 29 June 2022
-    -   🏁 Finish: Thursday, 30 June 2022
+    -   🏁 Finish: Tuesday, 05 July 2022
 -   📔 Book:
     <a href="https://leanpub.com/LittleInferenceBook" target="_blank"
     rel="noopener">Statistical inference for data science</a>
 
 ------------------------------------------------------------------------
-
-## Notes

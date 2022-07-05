@@ -11,7 +11,7 @@ params:
   specialization_url: 'https://www.coursera.org/specializations/data-science-statistics-machine-learning'
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/07/01', tz = "America/Sao_Paulo")
-  course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
+  course_finish: !r lubridate::ymd('2022/07/05', tz = "America/Sao_Paulo")
   week: ' Week 4'
 ---
 
@@ -33,7 +33,8 @@ library(lubridate)
 
 #### Assignments & Deliverables
 
-* [&#x1F680; Course Project 4 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-4)
+* [&#x1F680; Course Project -- Part 1 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%201)
+* [&#x1F680; Course Project -- Part 2 Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%202)
 * [&#x1F4DD; Quiz 4](./quiz-4_statistical-inference.md)
 
 #### Slides
@@ -47,6 +48,3 @@ library(lubridate)
 We will begin looking into power, bootstrapping, and permutation tests.
 
 --------------------------------------------------------------------------------
-
-## Class Notes
-

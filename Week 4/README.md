@@ -12,14 +12,16 @@
     -   🧑‍🏫 Instructor: Brian Caffo
 -   📆 Week 4
     -   🚦 Start: Friday, 01 July 2022
-    -   🏁 Finish: Friday, 01 July 2022
+    -   🏁 Finish: Tuesday, 05 July 2022
 
 ------------------------------------------------------------------------
 
 #### Assignments & Deliverables
 
--   [🚀 Course Project 4
-    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-4)
+-   [🚀 Course Project – Part 1
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%201)
+-   [🚀 Course Project – Part 2
+    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project/tree/main/Part%202)
 -   [📝 Quiz 4](./quiz-4_statistical-inference.md)
 
 #### Slides
@@ -33,5 +35,3 @@
 We will begin looking into power, bootstrapping, and permutation tests.
 
 ------------------------------------------------------------------------
-
-## Class Notes

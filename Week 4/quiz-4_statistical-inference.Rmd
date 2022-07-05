@@ -18,7 +18,7 @@ params:
   specialization_url: 'https://www.coursera.org/specializations/data-science-statistics-machine-learning'
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/07/01', tz = "America/Sao_Paulo")
-  course_finish: !r lubridate::today(tzone = "America/Sao_Paulo")
+  course_finish: !r lubridate::ymd('2022/07/05', tz = "America/Sao_Paulo")
   week: ' Week 4'
 always_allow_html: true
 ---
@@ -57,14 +57,25 @@ Consider testing the hypothesis that there was a mean reduction in blood pressur
 _(Hint, consider that the observations are paired.)_
 
 - [ ] 0.10
-- [ ] 0.087
+- [x] 0.087
 - [ ] 0.05
 - [ ] 0.043
 
 **Answer**
 
+* Two weeks later = few observations = T-distribution
+* We have the same subject measured in baseline and the experiment = paired
 
+```{r,echo=TRUE}
+# Calculating the Hypothesis using a T-distribution with a paired.
+q1 <- stats::t.test(x = c(140,138,150,148,135),
+                    c(132,135,151,146,130),
+                    paired = TRUE,
+                    alternative = "two.sided")
 
+# P value.
+q1$p.value
+```
 
 ## Question 2
 
@@ -73,13 +84,31 @@ A sample of 9 men yielded a sample average brain volume of 1,100cc and a standar
 - [ ] 1081 to 1119
 - [ ] 1031 to 1169
 - [ ] 1080 to 1120
-- [ ] 1077 to 1123
+- [x] 1077 to 1123
 
 **Answer**
 
+* sample ($n$) = 9 
+    * Due to the n value being small, it must be used as a t-distribution.
+* $\mu$ = 1100 cc
+* $\sigma$ = 30 cc
+* $\alpha$ = 5%
+
+$\mu \pm t_{(n-1,1-\frac{\alpha}{2}) \cdot \frac{sd}{\sqrt(n)}}$
 
 
+```{r,echo=TRUE}
+n <- 9
+mu <- 1100
+sd <- 30
+alpha <- 5/100
 
+# Calculating the quantile to df = 8 and p = 0.975
+t_8_975 <- qt(p = (1 - alpha/2), df = 9 - 1)
+
+# Calculating the CI.
+mu + c(-1,1) * t_8_975 * sd / sqrt(n)
+```
 
 ## Question 3
 
@@ -88,12 +117,34 @@ Researchers conducted a blind taste test of Coke versus Pepsi. Each of four peop
 - [ ] 0.62
 - [ ] 0.005
 - [ ] 0.10
-- [ ] 0.31
+- [x] 0.31
 
 **Answer**
 
+* p_coke = 3/4
+* p_pepsi = 1/4
+* Coke is preferred to Pepsi, and;
+    Probability to 3 or 4 person prefer Coke.
+* Using a one sided exact test.
 
+My Hypothesis:
 
+$$H_{0}: p = 0.5$$
+$$H_{a}: p > 0.5$$
+
+General formula:
+
+$$P(n) = {4 \choose n} \cdot (1-p)^{(4-n)} \cdot (p)^{n}$$
+$$ P(Prefer \ Coke) = P(p \ge 3)$ = $P(3) + P(4)$$
+$$P(p \ge 3) = {4 \choose 3} \cdot (1-p)^{(4-3)} \cdot (p)^{3} + {4 \choose 4} \cdot (1-p)^{(4-4)} \cdot (p)^{4}$$
+$$P(p \ge 3) = 0.3125$$
+
+```{r,echo=TRUE}
+# Calculating the probability.
+P_3_4 <- choose(4,3) * (1-1/2)^1 * (1/2)^3 + choose(4,4) * (1-1/2)^0 * (1/2)^4
+
+P_3_4
+```
 
 
 ## Question 4
@@ -101,43 +152,71 @@ Researchers conducted a blind taste test of Coke versus Pepsi. Each of four peop
 Infection rates at a hospital above 1 infection per 100 person days at risk are believed to be too high and are used as a benchmark. A hospital that had previously been above the benchmark recently had 10 infections over the last 1,787 person days at risk. About what is the one sided P-value for the relevant test of whether the hospital is *below* the standard? 
 
 - [ ] 0.22
-- [ ] 0.03
+- [x] 0.03
 - [ ] 0.52
 - [ ] 0.11
 
 **Answer**
 
-
-
-
+```{r,echo=TRUE}
+ppois(q = 10, lambda = 1/100 * 1787)
+```
 
 ## Question 5
 
-Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a placebo. Subjects’ body mass indices (BMIs) were measured at a baseline and again after having received the treatment or placebo for four weeks. The average difference from follow-up to the baseline (followup - baseline) was −3 kg/m2 for the treated group and 1 kg/m2 for the placebo group. The corresponding standard deviations of the differences was 1.5 kg/m2 for the treatment group and 1.8 kg/m2 for the placebo group. Does the change in BMI appear to differ between the treated and placebo groups?  Assuming normality of the underlying data and a common population variance, give a pvalue for a two sided t test.
+Suppose that 18 obese subjects were randomized, 9 each, to a new diet pill and a placebo. Subjects’ body mass indices (BMIs) were measured at a baseline and again after having received the treatment or placebo for four weeks. The average difference from follow-up to the baseline (followup - baseline) was −3 kg/m2 for the treated group and 1 kg/m2 for the placebo group. The corresponding standard deviations of the differences was 1.5 kg/m2 for the treatment group and 1.8 kg/m2 for the placebo group. Does the change in BMI appear to differ between the treated and placebo groups?  Assuming normality of the underlying data and a common population variance, give a p-value for a two sided t test.
 
 - [ ] Less than 0.05, but larger than 0.01
-- [ ] Less than 0.01
+- [x] Less than 0.01
 - [ ] Less than 0.10 but larger than 0.05
 - [ ] Larger than 0.10
 
 **Answer**
 
+$$H_{0}: \mu_{diff,treated} - \mu_{diff,placebo} = 0$$
+$$H_{a}: \mu_{diff,treated} - \mu_{diff,placebo} \ne 0$$
 
+$$\underbrace{\mu_{diff,treated} - \mu_{diff,placebo}}_{0} = \bar{treated} - \bar{placebo} \pm t_{(n + n -2, 1-\frac{\alpha}{2})} \cdot S_{p} \cdot (\frac{1}{n} + \frac{1}{n})^{1/2} $$
+$$t_{(n + n -2, 1-\frac{\alpha}{2})} \cdot S_{p} \cdot (\frac{1}{n} + \frac{1}{n})^{1/2} = \bar{treated} - \bar{placebo}$$
+$$t_{(n + n -2, 1-\frac{\alpha}{2})} = \frac{\bar{treated} - \bar{placebo}}{S_{p} \cdot (\frac{1}{n} + \frac{1}{n})^{1/2}}$$
 
+```{r,echo=TRUE}
+# Sample
+n <- 9
+
+# Treated
+x_treat <- -3 
+s_treat <- 1.5
+
+# Placebo
+x_placebo <- 1 
+s_placebo <- 1.8
+
+# The pooled variance estimator is:
+sp <- sqrt(((n - 1) * s_treat^2 + (n - 1) * s_placebo^2)/(n + n - 2))
+
+# Calculating the quantile given: mu_treat - mu_placebo = 0
+t <- (x_treat - x_placebo)/(sp * sqrt(1/n + 1/n))
+
+# Given t, its possible to calculate the probability.
+q5_pvalue <- pt(t, n + n - 2)
+
+# Formatting
+format(q5_pvalue, digits = 2,scientific = FALSE)
+```
 
 ## Question 6
 
-Brain volumes for 9 men yielded a 90% confidence interval of 1,077 cc to 1,123 cc. Would you reject in a two sided 5% hypothesis test of $H_0 :μ=1,078$? 
+Brain volumes for 9 men yielded a 90% confidence interval of 1,077 cc to 1,123 cc. Would you reject in a two sided 5% hypothesis test of $H_0 : \mu = 1,078$? 
 
 - [ ] Where does Brian come up with these questions?
-- [ ] No you wouldn't reject.
+- [x] No you wouldn't reject.
 - [ ] Yes you would reject.
 - [ ] It's impossible to tell.
 
 **Answer**
 
-
-
+The 90% CI already includes the $\mu=1078$, so if I increase the CI to 95%, it will still contain the $\mu=1078$. For this reason, I will not reject the $H_0$ statement.
 
 ## Question 7
 
@@ -145,27 +224,61 @@ Researchers would like to conduct a study of $100$ healthy adults to detect a fo
 
 - [ ] 0.70
 - [ ] 0.60
-- [ ] 0.80
+- [x] 0.80
 - [ ] 0.50
 
 **Answer**
 
+* n = 100 (normal)
+* one sided test = `lower.tail = FALSE`
+* sd = 0.04
+* delta = 0.01
+* $\alpha = 5\%$
 
+```{r,echo=TRUE}
+# Inputs
+n <- 100
+alpha <- 5/100
+sd <- 0.04
+mu <- 0.01
+
+# Calculating the z value from alpha equal to 5%
+z <- qnorm(p = (1 - alpha))
+
+# Calculating the probability.
+pnorm(z * sd/sqrt(n), mean = mu, sd = sd/sqrt(n), lower.tail = FALSE)
+```
 
 
 ## Question 8
 
-Researchers would like to conduct a study of  n n healthy adults to detect a four year mean brain volume loss of $.01~mm^3$. Assume that the standard deviation of four year volume loss in this population is $.04~mm^3$. About what would be the value of  n n needed for $90\%$ power of type one error rate of $5\%$ one sided test versus a null hypothesis of no volume loss?
+Researchers would like to conduct a study of $n$ healthy adults to detect a four year mean brain volume loss of $.01~mm^3$. Assume that the standard deviation of four year volume loss in this population is $.04~mm^3$. About what would be the value of $n$ needed for $90\%$ power of type one error rate of $5\%$ one sided test versus a null hypothesis of no volume loss?
 
 - [ ] 120
 - [ ] 180
 - [ ] 160
-- [ ] 140
+- [x] 140
 
 **Answer**
 
+* $\Delta$ = 0.01
+* sd = 0.04
+* power = 90%
+* type one error = 5% = `sig.level`
+* type = one sided test
 
+```{r,echo=TRUE}
+# Calculating the n value.
+q8 <- power.t.test(power = 0.9,
+                   delta = 0.01,
+                   sd = 0.04,
+                   sig.level = 0.05,
+                   type = "one.sample",
+                   alternative = "one.sided")
 
+# Printing the n
+round(q8$n)
+```
 
 ## Question 9
 
@@ -174,10 +287,4 @@ As you increase the type one error rate, $\alpha$, what happens to power?
 - [ ] No, for real, where does Brian come up with these problems?
 - [ ] It's impossible to tell given the information in the problem.
 - [ ] You will get smaller power.
-- [ ] You will get larger power.
-
-**Answer**
-
-
-
-
+- [x] You will get larger power.

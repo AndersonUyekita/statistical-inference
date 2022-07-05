@@ -34,5 +34,3 @@ We’re going to tackle variability, distributions, limits, and confidence
 intervals.
 
 ------------------------------------------------------------------------
-
-## Class Notes
