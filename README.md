@@ -12,6 +12,8 @@ Statistical Inference
     -   🧑‍🏫 Instructor: Brian Caffo
     -   🚦 Start: Wednesday, 29 June 2022
     -   🏁 Finish: Tuesday, 05 July 2022
+-   🎓
+    [Certificate](https://www.coursera.org/account/accomplishments/certificate/NNL7BM2YKCCX)
 
 ------------------------------------------------------------------------
 

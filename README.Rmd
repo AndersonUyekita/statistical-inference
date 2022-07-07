@@ -12,7 +12,7 @@ params:
   instructor: 'Brian Caffo'
   course_start: !r lubridate::ymd('2022/06/29', tz = "America/Sao_Paulo")
   course_finish: !r lubridate::ymd('2022/07/05', tz = "America/Sao_Paulo")
-  certificate_url: './'
+  certificate_url: 'https://www.coursera.org/account/accomplishments/certificate/NNL7BM2YKCCX'
 ---
 
 ```{r setup,include=FALSE}
