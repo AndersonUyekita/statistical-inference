@@ -18,8 +18,6 @@
 
 #### Assignments & Deliverables
 
--   [🚀 Course Project 2
-    Repository](https://github.com/AndersonUyekita/statistical-inference_course-project-2)
 -   [📝 Quiz 2](./quiz-2_statistical-inference.md)
 
 #### Slides
